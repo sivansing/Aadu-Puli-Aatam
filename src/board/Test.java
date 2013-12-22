@@ -77,7 +77,12 @@ public class Test {
   p[9].add_goat();
 
 
-    
+     for(int i=0;i<=22;i++){
+		gx[i]=p[i].X;
+		gy[i]=p[i].Y;
+		
+	}
+	}
     
 	} 
 	
@@ -93,11 +98,78 @@ public class Test {
     System.out.println("Enter the FROM points :");
     @SuppressWarnings("resource")
 	Scanner IN = new Scanner(System.in);
+	for(i=0;i<=22;i++){
+		p[i].X=gx[i];
+		p[i].Y=gy[i];
+		gx1[i]=gx[i];
+		gy1[i]=gy[i];
+	}
+    
     
     System.out.println("FROM x = ");
     input_from_x=IN.nextInt();
     System.out.println("FROM y = ");
     input_from_y=IN.nextInt();
+    
+    for(i=0;i<=22;i++){
+    	
+    	if(p[i].X == input_from_x && p[i].Y == input_from_y){
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]+1)==input_from_x)&&((gy1[i]=gy1[i]+1)==input_from_y)){
+    		input_from_x--;
+    		input_from_y--;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]+1)==input_from_x)&&((gy1[i]=gy1[i]+2)==input_from_y)){
+    		input_from_x=input_from_x-2;
+    		input_from_y=input_from_x-2;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]+1)==input_from_x)&&((gy1[i]=gy1[i]+3)==input_from_y)){
+    		input_from_x=input_from_x-3;
+    		input_from_y=input_from_x-3;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]+1)==input_from_x)&&((gy1[i]=gy1[i]+4)==input_from_y)){
+    		input_from_x=input_from_x-4;
+    		input_from_y=input_from_x-4;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]+1)==input_from_x)&&((gy1[i]=gy1[i]+5)==input_from_y)){
+    		input_from_x=input_from_x-5;
+    		input_from_y=input_from_x-5;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]-6)==input_from_x)&&((gy1[i]=gy1[i]-1)==input_from_y)){
+    		input_from_x++;
+    		input_from_y++;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]-1)==input_from_x)&&((gy1[i]=gy1[i]-2)==input_from_y)){
+    		input_from_x=input_from_x+2;
+    		input_from_y=input_from_x+2;
+    		break;
+    	}
+    	else if(((gx1[i]=gx1[i]-1)==input_from_x)&&((gy1[i]=gy1[i]-3)==input_from_y)){
+    		input_from_x=input_from_x+3;
+    		input_from_y=input_from_x+3;
+    		break;
+    	}
+    	else  if(((gx1[i]=gx1[i]-1)==input_from_x)&&((gy1[i]=gy1[i]-4)==input_from_y)){
+    		input_from_x=input_from_x+4;
+    		input_from_y=input_from_x+4;
+    		break;
+    	}
+    	else  if(((gx1[i]=gx1[i]-1)==input_from_x)&&((gy1[i]=gy1[i]-5)==input_from_y)){
+    		input_from_x=input_from_x+5;
+    		input_from_y=input_from_x+5;
+    		break;
+    	}
+    }
+    System.out.println("i ="+i);
+    
+    
     
     System.out.println("Enter the TO points");
     System.out.println("TO x = ");
@@ -105,22 +177,71 @@ public class Test {
     System.out.println("TO y = ");
     input_to_y=IN.nextInt();
     
-     
     
-    for( i=0;i<22;i++){
-    	if(p[i].X == input_from_x && p[i].Y == input_from_y){
+    for(j=0;j<=22;j++){
+    	if((input_from_x==input_to_x)&&(input_from_y==input_to_y)){
+    		System.out.println("your destination position is wrong choose another one" );
+    		j=i;
     		break;
     	}
-    }
-    System.out.println("i ="+i);
-    for(j=0;j<22;j++){
-    	if(p[j].X == input_to_x && p[j].Y == input_to_y){
+    	else if(p[j].X == input_to_x && p[j].Y == input_to_y){
     		break;
     	}
+    	else if(((p[j].X=p[j].X+1)==input_to_x)&&((p[j].Y=p[j].Y+1)==input_to_y)){
+    		input_to_x--;
+			input_to_y--;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X+1)==input_to_x)&&(p[j].Y=p[j].Y+2)==input_to_y){
+    		input_to_x=input_to_x-2;
+			input_to_y=input_to_y-2;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X+1)==input_to_x)&&(p[j].Y=p[j].Y+3)==input_to_y){
+    		input_to_x=input_to_x-3;
+			input_to_y=input_to_y-3;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X+1)==input_to_x)&&(p[j].Y=p[j].Y+4)==input_to_y){
+    		input_to_x=input_to_x-4;
+			input_to_y=input_to_y-4;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X+1)==input_to_x)&&(p[j].Y=p[j].Y+5)==input_to_y){
+    		input_to_x=input_to_x-5;
+			input_to_y=input_to_y-5;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X-6)==input_to_x)&&(p[j].Y=p[j].Y-1)==input_to_y){
+    		input_to_x++;
+			input_to_y++;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X-1)==input_to_x)&&(p[j].Y=p[j].Y-2)==input_to_y){
+    		input_to_x=input_to_x+2;
+			input_to_y=input_to_x+2;
+			break;
+    	}
+    	else if(((p[j].X=p[j].X-1)==input_to_x)&&(p[j].Y=p[j].Y-3)==input_to_y){
+    		input_to_x=input_to_x+3;
+			input_to_y=input_to_x+3;
+			break;
+			
+    	}
+    	else if(((p[j].X=p[j].X-1)==input_to_x)&&(p[j].Y=p[j].Y-4)==input_to_y){
+    		input_to_x=input_to_x+4;
+			input_to_y=input_to_x+4;
+			break;
+			
+    	}
+    	else if(((p[j].X=p[j].X-1)==input_to_x)&&(p[j].Y=p[j].Y-5)==input_to_y){
+    		input_to_x=input_to_x+5;
+			input_to_y=input_to_x+5;
+			break;
+    	}
     }
+    
     System.out.println("j ="+j);
-    	
-    
     
      
     
